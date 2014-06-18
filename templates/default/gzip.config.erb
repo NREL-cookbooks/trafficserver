@@ -1,0 +1,6 @@
+enabled <%= node[:trafficserver][:gzip][:enabled] %>
+remove-accept-encoding <%= node[:trafficserver][:gzip][:remove_accept_encoding] %>
+cache <%= node[:trafficserver][:gzip][:cache] %>
+<%- node[:trafficserver][:gzip][:compressible_content_type].uniq.each do |type| %>
+compressible-content-type <%= type %>
+<%- end %>
