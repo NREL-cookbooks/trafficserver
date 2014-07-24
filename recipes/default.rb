@@ -84,6 +84,7 @@ end
 
 configs = [
   "cache.config",
+  "gzip.config",
   "plugin.config",
   "remap.config",
   "storage.config",
