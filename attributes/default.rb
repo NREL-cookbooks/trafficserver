@@ -7,9 +7,9 @@
 # All rights reserved - Do Not Redistribute
 #
 
-default[:trafficserver][:version] = "4.2.1"
+default[:trafficserver][:version] = "4.2.2"
 default[:trafficserver][:download_url] = "http://mirrors.sonic.net/apache/trafficserver/trafficserver-#{node[:trafficserver][:version]}.tar.bz2"
-default[:trafficserver][:archive_checksum] = "0f3a671f68fc1702a24b203eb7e0cbc48f9c1251584ed8ae5405a49ecc2f46e9"
+default[:trafficserver][:archive_checksum] = "ad8c69a23559960a611ac0f76eb5f14e5efa473f029422bafd9a9a82b67ed509"
 default[:trafficserver][:prefix] = "/opt/trafficserver"
 default[:trafficserver][:user] = "trafficserver"
 default[:trafficserver][:group] = "trafficserver"
