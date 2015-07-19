@@ -7,9 +7,9 @@
 # All rights reserved - Do Not Redistribute
 #
 
-default[:trafficserver][:version] = "4.2.2"
+default[:trafficserver][:version] = "4.2.3"
 default[:trafficserver][:download_url] = "http://mirrors.sonic.net/apache/trafficserver/trafficserver-#{node[:trafficserver][:version]}.tar.bz2"
-default[:trafficserver][:archive_checksum] = "ad8c69a23559960a611ac0f76eb5f14e5efa473f029422bafd9a9a82b67ed509"
+default[:trafficserver][:archive_checksum] = "1aaac711fb2ca31f68d814493f230d2d740be014100b7457a76fb614fa9b7933"
 default[:trafficserver][:prefix] = "/opt/trafficserver"
 default[:trafficserver][:user] = "trafficserver"
 default[:trafficserver][:group] = "trafficserver"
@@ -23,6 +23,7 @@ default[:trafficserver][:records][:background_fill_active_timeout] = "60"
 default[:trafficserver][:records][:background_fill_completed_threshold] = "0.5"
 default[:trafficserver][:records][:max_open_read_retries] = "-1"
 default[:trafficserver][:records][:open_read_retry_time] = "10"
+default[:trafficserver][:records][:ram_cache_size] = "-1"
 
 default[:trafficserver][:cache] = []
 default[:trafficserver][:plugin] = []
