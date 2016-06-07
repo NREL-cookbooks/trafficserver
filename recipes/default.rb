@@ -11,6 +11,7 @@ include_recipe "build-essential"
 
 dependencies = value_for_platform_family({
   ["rhel", "fedora"] => [
+    "libxml2-devel",
     "lua-devel",
     "openssl-devel",
     "pcre-devel",
@@ -42,8 +43,11 @@ bash "compile_trafficserver" do
   code <<-EOH
     tar -xvf #{archive}
     cd #{dir}
-    autoreconf -if
-    ./configure --prefix=#{node[:trafficserver][:prefix]} --with-user=#{node[:trafficserver][:user]} --with-group=#{node[:trafficserver][:group]}
+    ./configure \
+      --prefix=#{node[:trafficserver][:prefix]} \
+      --with-user=#{node[:trafficserver][:user]} \
+      --with-group=#{node[:trafficserver][:group]} \
+      --enable-experimental-plugins
     make
     make install
     cp #{node[:trafficserver][:prefix]}/bin/trafficserver /etc/init.d/trafficserver
