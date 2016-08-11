@@ -41,8 +41,9 @@ end
 bash "compile_trafficserver" do
   cwd Chef::Config[:file_cache_path]
   code <<-EOH
-    tar -xvf #{archive}
+    set -e -x
     rm -rf #{dir}
+    tar -xvf #{archive}
     cd #{dir}
     ./configure \
       --prefix=#{node[:trafficserver][:prefix]} \
